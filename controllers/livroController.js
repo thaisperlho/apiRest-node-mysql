@@ -6,13 +6,13 @@ const Livro = require('../models').Livro;
 
 //Busca Livro (GET)
 router.get('/', async (req, res) => {
-    const livros = await Livro.findAll(); 
+    const livros = await Livro.findAll();
     res.status(200).json(livros);
 });
 
 //Cadastra Livro (POST)
 router.post('/', async (req, res) => {
-    const { fk_editora, fk_categoria, fk_autor, titulo } = req.body; 
+    const { fk_editora, fk_categoria, fk_autor, titulo } = req.body;
     const newEdit = await Livro.create({
         fk_editora, fk_categoria,
         fk_autor, titulo
@@ -43,5 +43,5 @@ router.put('/:id', async (req, res) => {
     }
     );
     res.status(200).json({ message: 'Atualizado com sucesso' });
-}); 
+});
 module.exports = router;
