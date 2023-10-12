@@ -12,7 +12,7 @@ const autor = require('./controllers/autorController.js'); const livro = require
 app.use(bodyParser.json());
 //Função CORS para a autorização do uso da API
 app.use(cors())
-app.get('/', (req, res) => res.send('Estou aqui'))
+app.get('/', (req, res) => res.send('Rodando'))
 app.use('/editora', editora);
 app.use('/categoria', categoria);
 app.use('/autor', autor);

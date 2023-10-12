@@ -37,7 +37,7 @@ router.delete('/:id', async (req, res) => {
 //Altera Livro por ID (PUT)
 router.put('/:id', async (req, res) => {
     const { fk_editora, fk_categoria, fk_autor, titulo } = req.body;
-    await Autor.update(
+    await Livro.update(
         { fk_editora, fk_categoria, fk_autor, titulo }, {
         where: { id: req.params.id },
     }
